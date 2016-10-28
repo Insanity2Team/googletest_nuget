@@ -1,0 +1,62 @@
+
+configurations {
+	Toolset {
+		key : "PlatformToolset";
+        choices: { v140, v120, v110, v100 };
+    };
+}
+
+nuget {
+
+   nuspec {
+      id = googletest;
+      version : 1.8.0.0;
+      title:  Google's C++ test framework;
+      authors: { mheule@google.com (Markus Heule) };
+      licenseUrl: "https://opensource.org/licenses/bsd-license.php";
+      projectUrl: "https://github.com/google/googletest";
+      requireLicenseAcceptance:false;
+      summary: "Google's C++ test framework";
+	  copyright: Copyright 2016 Google Inc. All rights reserved.;
+      description: "Google's C++ test framework for Visual Studio 2015 (v140)";
+      tags: { native };
+   };
+ 
+   files {
+
+      nested1Include: {
+		#destination = ${d_include}\gtest\;
+        "googletest\googletest\include\gtest\*.h"
+      };
+
+	  nested2Include: {
+		#destination = ${d_include}\gtest\internal;
+        "googletest\googletest\include\gtest\internal\*.h"
+      };
+
+	  nested3Include: {
+		#destination = ${d_include}\gtest\internal\custom;
+        "googletest\googletest\include\gtest\internal\custom\*.h"
+      };
+
+      [x86,v140,release] {
+         lib:     { Release\*.lib; }
+      };
+ 
+      [x86,v140,debug] {
+         lib:     { Debug\*.lib;  }
+      };
+
+      [x64,v140,release] {
+         lib:     { x64\Release\*.lib; }
+      };
+ 
+      [x64,v140,debug] {
+         lib:     { x64\Debug\*.lib;  }
+      };
+   };
+
+   targets {
+	  Defines += HAS_GOOGLETEST;
+   };
+}
