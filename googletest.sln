@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{88B78898-01FF-4B14-9EBA-575C4B767793}"
 	ProjectSection(SolutionItems) = preProject
@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{88B78898
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "googletest_v140", "googletest_v140\googletest_v140.vcxproj", "{7E9E58DD-1AFF-461F-BB87-533FB90F10F2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "googletest_v141", "googletest_v141\googletest_v141.vcxproj", "{C1549E36-7AF9-45BA-86AF-FF581DF6F9E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +28,14 @@ Global
 		{7E9E58DD-1AFF-461F-BB87-533FB90F10F2}.Release|x64.Build.0 = Release|x64
 		{7E9E58DD-1AFF-461F-BB87-533FB90F10F2}.Release|x86.ActiveCfg = Release|Win32
 		{7E9E58DD-1AFF-461F-BB87-533FB90F10F2}.Release|x86.Build.0 = Release|Win32
+		{C1549E36-7AF9-45BA-86AF-FF581DF6F9E0}.Debug|x64.ActiveCfg = Debug|x64
+		{C1549E36-7AF9-45BA-86AF-FF581DF6F9E0}.Debug|x64.Build.0 = Debug|x64
+		{C1549E36-7AF9-45BA-86AF-FF581DF6F9E0}.Debug|x86.ActiveCfg = Debug|Win32
+		{C1549E36-7AF9-45BA-86AF-FF581DF6F9E0}.Debug|x86.Build.0 = Debug|Win32
+		{C1549E36-7AF9-45BA-86AF-FF581DF6F9E0}.Release|x64.ActiveCfg = Release|x64
+		{C1549E36-7AF9-45BA-86AF-FF581DF6F9E0}.Release|x64.Build.0 = Release|x64
+		{C1549E36-7AF9-45BA-86AF-FF581DF6F9E0}.Release|x86.ActiveCfg = Release|Win32
+		{C1549E36-7AF9-45BA-86AF-FF581DF6F9E0}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,7 +2,7 @@
 configurations {
 	Toolset {
 		key : "PlatformToolset";
-        choices: { v140, v120, v110, v100 };
+        choices: { v141, v140, v120, v110, v100 };
     };
 }
 
@@ -10,15 +10,15 @@ nuget {
 
    nuspec {
       id = googletest;
-      version : 1.8.0.0;
+      version : 1.8.1;
       title:  Google's C++ test framework;
       authors: { mheule@google.com (Markus Heule) };
       licenseUrl: "https://opensource.org/licenses/bsd-license.php";
       projectUrl: "https://github.com/google/googletest";
       requireLicenseAcceptance:false;
       summary: "Google's C++ test framework";
-	  copyright: Copyright 2016 Google Inc. All rights reserved.;
-      description: "Google's C++ test framework for Visual Studio 2015 (v140)";
+	  copyright: "Copyright 2016 Google Inc. All rights reserved.";
+      description: "Google's C++ test framework for Visual Studio 2015 (v140) & 2017 (v141)";
       tags: { native };
    };
  
@@ -40,19 +40,39 @@ nuget {
       };
 
       [x86,v140,release] {
-         lib:     { Release\*.lib; }
+         lib:     { Release\googletest_v140.lib; }
       };
  
       [x86,v140,debug] {
-         lib:     { Debug\*.lib;  }
+         lib:     { Debug\googletest_v140.lib; }
+		 symbols: { Debug\googletest_v140.pdb; }
       };
 
       [x64,v140,release] {
-         lib:     { x64\Release\*.lib; }
+         lib:     { x64\Release\googletest_v140.lib; }
       };
  
       [x64,v140,debug] {
-         lib:     { x64\Debug\*.lib;  }
+         lib:     { x64\Debug\googletest_v140.lib; }
+		 symbols: { x64\Debug\googletest_v140.pdb; }
+      };
+
+      [x86,v141,release] {
+         lib:     { Release\googletest_v141.lib; }
+      };
+ 
+      [x86,v141,debug] {
+         lib:     { Debug\googletest_v141.lib; }
+		 symbols: { Debug\googletest_v141.pdb; }
+      };
+
+      [x64,v141,release] {
+         lib:     { x64\Release\googletest_v141.lib; }
+      };
+ 
+      [x64,v141,debug] {
+         lib:     { x64\Debug\googletest_v141.lib; }
+		 symbols: { x64\Debug\googletest_v141.pdb; }
       };
    };
 
