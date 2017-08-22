@@ -10,7 +10,7 @@ nuget {
 
    nuspec {
       id = googletest;
-      version : 1.8.1;
+      version : 1.8.2;
       title:  Google's C++ test framework;
       authors: { mheule@google.com (Markus Heule) };
       licenseUrl: "https://opensource.org/licenses/bsd-license.php";
@@ -19,6 +19,7 @@ nuget {
       summary: "Google's C++ test framework";
 	  copyright: "Copyright 2016 Google Inc. All rights reserved.";
       description: "Google's C++ test framework for Visual Studio 2015 (v140) & 2017 (v141)";
+	  releaseNotes: "Fix VS 2017 update 3 issues by linking as a dynamic library.";
       tags: { native };
    };
  
@@ -39,44 +40,33 @@ nuget {
         "googletest\googletest\include\gtest\internal\custom\*.h"
       };
 
-      [x86,v140,release] {
-         lib:     { Release\googletest_v140.lib; }
-      };
- 
-      [x86,v140,debug] {
-         lib:     { Debug\googletest_v140.lib; }
-		 symbols: { Debug\googletest_v140.pdb; }
-      };
 
-      [x64,v140,release] {
-         lib:     { x64\Release\googletest_v140.lib; }
-      };
+	  ("Win32,x64") => {
+			[${0},v140,release] {
+			   lib: ${0}\Release\googletest_v141.lib;
+			   bin: ${0}\Release\googletest_v141.dll;
+			};
  
-      [x64,v140,debug] {
-         lib:     { x64\Debug\googletest_v140.lib; }
-		 symbols: { x64\Debug\googletest_v140.pdb; }
-      };
+			[${0},v140,debug] {
+			   lib: ${0}\Debug\googletest_v141.lib;
+			   bin: ${0}\Debug\googletest_v141.dll;
+			};
 
-      [x86,v141,release] {
-         lib:     { Release\googletest_v141.lib; }
-      };
+			[${0},v141,release] {
+			   lib: ${0}\Release\googletest_v141.lib;
+			   bin: ${0}\Release\googletest_v141.dll;
+			};
  
-      [x86,v141,debug] {
-         lib:     { Debug\googletest_v141.lib; }
-		 symbols: { Debug\googletest_v141.pdb; }
-      };
+			[${0},v141,debug] {
+			   lib: ${0}\Debug\googletest_v141.lib;
+			   bin: ${0}\Debug\googletest_v141.dll;
+			};
+	 };
 
-      [x64,v141,release] {
-         lib:     { x64\Release\googletest_v141.lib; }
-      };
- 
-      [x64,v141,debug] {
-         lib:     { x64\Debug\googletest_v141.lib; }
-		 symbols: { x64\Debug\googletest_v141.pdb; }
-      };
    };
 
    targets {
 	  Defines += HAS_GOOGLETEST;
+	  Defines += GTEST_LINKED_AS_SHARED_LIBRARY;
    };
 }
