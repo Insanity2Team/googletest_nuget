@@ -10,7 +10,7 @@ nuget {
 
    nuspec {
       id = googletest;
-      version : 1.8.2;
+      version : 1.8.3;
       title:  Google's C++ test framework;
       authors: { mheule@google.com (Markus Heule) };
       licenseUrl: "https://opensource.org/licenses/bsd-license.php";
@@ -18,8 +18,9 @@ nuget {
       requireLicenseAcceptance:false;
       summary: "Google's C++ test framework";
 	  copyright: "Copyright 2016 Google Inc. All rights reserved.";
-      description: "Google's C++ test framework for Visual Studio 2015 (v140) & 2017 (v141)";
-	  releaseNotes: "Fix VS 2017 update 3 issues by linking as a dynamic library.";
+      description: @"Google's C++ test framework for Visual Studio 2015 (v140) & 2017 (v141)
+      Note: NuGet package version is not corresponding with GoogleTest releases!";
+	  releaseNotes: "C++ 17 standard is now supported, many other fixes and improvements";
       tags: { native };
    };
  
